@@ -20,7 +20,7 @@ class Player2(Cycle):
             velocity = Point(1 * constants.CELL_SIZE, 0)
             text = "8" if i == 0 else "#"
             color = constants.BLUE if i == 0 else constants.GREEN
-            
+
             segment = Actor()
             segment.set_position(position)
             segment.set_velocity(velocity)
