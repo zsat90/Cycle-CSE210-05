@@ -28,8 +28,8 @@ class DrawActorsAction(Action):
         """
         score = cast.get_first_actor("scores")
         food = cast.get_first_actor("foods")
-        player1 = cast.get_first_actor("snakes")
-        player2 = cast.get_second_actor("snakes")
+        player1 = cast.get_first_actor("cycles")
+        player2 = cast.get_second_actor("cycles")
         segmentsP1 = player1.get_segments()
         segmentsP2 = player2.get_segments()
         messages = cast.get_actors("messages")
