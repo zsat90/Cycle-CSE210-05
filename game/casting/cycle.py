@@ -5,9 +5,9 @@ from game.shared.point import Point
 
 class Cycle(Actor):
     """
-    A long limbless reptile.
+    A cycle rider that creates a wall as it moves.
 
-    The responsibility of Snake is to move itself.
+    The responsibility of Cycle is to move itself.
 
     Attributes:
         _points (int): The number of points the food is worth.
