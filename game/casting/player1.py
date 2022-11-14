@@ -11,18 +11,7 @@ class Player1(Cycle):
         self._segments = []
         self._prepare_body()
     #polyhere
-    def grow_tail(self):
-        tail = self._segments[-1]
-        velocity = tail.get_velocity()
-        offset = velocity.reverse()
-        position = tail.get_position().add(offset)
-
-        segment = Actor()
-        segment.set_position(position)
-        segment.set_velocity(velocity)
-        segment.set_text("#")
-        segment.set_color(constants.GREEN)
-        self._segments.append(segment)
+    
 
     def _prepare_body(self):
         x = int(constants.MAX_X / .25)
@@ -40,6 +29,19 @@ class Player1(Cycle):
             segment.set_text(text)
             segment.set_color(color)
             self._segments.append(segment)
+
+    def grow_tail(self):
+        tail = self._segments[-1]
+        velocity = tail.get_velocity()
+        offset = velocity.reverse()
+        position = tail.get_position().add(offset)
+
+        segment = Actor()
+        segment.set_position(position)
+        segment.set_velocity(velocity)
+        segment.set_text("#")
+        segment.set_color(constants.GREEN)
+        self._segments.append(segment)
    
    
 

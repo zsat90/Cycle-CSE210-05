@@ -8,7 +8,7 @@ class HandleCollisionsAction(Action):
     An update action that handles interactions between the actors.
     
     The responsibility of HandleCollisionsAction is to handle the situation when the cycle collides
-    with the food, or the cycle collides with its segments, or the game is over.
+    with the other player, or the cycle collides with its segments, or the game is over.
 
     Attributes:
         _is_game_over (boolean): Whether or not the game is over.
@@ -27,10 +27,10 @@ class HandleCollisionsAction(Action):
         """
         if not self._is_game_over:
             self._handle_segment_collision(cast)
-            self._handle_wall(cast)
+            self._handle_tail(cast)
             self._handle_game_over(cast)
 
-    def _handle_wall(self, cast):
+    def _handle_tail(self, cast):
         """Handles how the cycles interact with the walls.
 
         
@@ -38,7 +38,7 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
         """
         cycle_one = cast.get_first_actor("cycles")
-        cycle_two = cast.get_first_actor("cycles")
+        cycle_two = cast.get_second_actor("cycles")
         cycle_one.grow_tail()
         cycle_two.grow_tail()
     
@@ -64,7 +64,7 @@ class HandleCollisionsAction(Action):
                 self._is_game_over = True
 
     def _handle_game_over(self, cast):
-        """Shows the 'game over' message and turns the cycles and food white if the game is over.
+        """Shows the 'game over' message and turns the cycles white if the game is over.
         
         Args:
             cast (Cast): The cast of Actors in the game.
@@ -72,7 +72,7 @@ class HandleCollisionsAction(Action):
         if self._is_game_over:
             cycle = cast.get_first_actor("cycles")
             segments = cycle.get_segments()
-            food = cast.get_first_actor("foods")
+        
 
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
@@ -85,4 +85,4 @@ class HandleCollisionsAction(Action):
 
             for segment in segments:
                 segment.set_color(constants.WHITE)
-            # food.set_color(constants.WHITE)
+        

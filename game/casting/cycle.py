@@ -10,7 +10,7 @@ class Cycle(Actor):
     The responsibility of Cycle is to move itself.
 
     Attributes:
-        _points (int): The number of points the food is worth.
+        
     """
 
     def __init__(self):
