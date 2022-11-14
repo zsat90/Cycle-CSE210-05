@@ -35,19 +35,19 @@ class Cycle(Actor):
     def get_head(self):
         return self._segments[0]
 
-    def grow_tail(self, number_of_segments):
-        for i in range(number_of_segments):
-            tail = self._segments[-1]
-            velocity = tail.get_velocity()
-            offset = velocity.reverse()
-            position = tail.get_position().add(offset)
+    def grow_tail(self):
+        
+        tail = self._segments[-1]
+        velocity = tail.get_velocity()
+        offset = velocity.reverse()
+        position = tail.get_position().add(offset)
 
-            segment = Actor()
-            segment.set_position(position)
-            segment.set_velocity(velocity)
-            segment.set_text("#")
-            segment.set_color(constants.GREEN)
-            self._segments.append(segment)
+        segment = Actor()
+        segment.set_position(position)
+        segment.set_velocity(velocity)
+        segment.set_text("#")
+        segment.set_color(constants.GREEN)
+        self._segments.append(segment)
 
     def turn_head(self, velocity):
         self._segments[0].set_velocity(velocity)
@@ -56,7 +56,7 @@ class Cycle(Actor):
         x = int(constants.MAX_X / 2)
         y = int(constants.MAX_Y / 2)
 
-        for i in range(constants.SNAKE_LENGTH):
+        for i in range(constants.CYCLE_LENGTH):
             position = Point(x - i * constants.CELL_SIZE, y)
             velocity = Point(1 * constants.CELL_SIZE, 0)
             text = "8" if i == 0 else "#"
