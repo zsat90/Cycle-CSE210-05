@@ -24,6 +24,7 @@ def main():
     cast.add_actor("cycles", Player1())
     cast.add_actor("cycles", Player2())
     cast.add_actor("scores", Score())
+    cast.add_actor("scores", Score())
 
     # start the game
     keyboard_service = KeyboardService()
