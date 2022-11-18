@@ -1,10 +1,4 @@
 from game.scripting.action import Action
-from game.casting.cycle import Cycle
-from game.casting.player1 import Player1
-from game.casting.player2 import Player2
-from game.casting.actor import Actor
-
-
 
 
 class MoveActorsAction(Action):

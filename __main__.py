@@ -1,8 +1,5 @@
-import constants
-
 from game.casting.cast import Cast
 from game.casting.score import Score
-from game.casting.cycle import Cycle
 from game.casting.player1 import Player1
 from game.casting.player2 import Player2
 from game.scripting.script import Script
@@ -13,8 +10,6 @@ from game.scripting.draw_actors_action import DrawActorsAction
 from game.directing.director import Director
 from game.services.keyboard_service import KeyboardService
 from game.services.video_service import VideoService
-from game.shared.color import Color
-from game.shared.point import Point
 
 
 def main():
