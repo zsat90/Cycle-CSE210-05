@@ -17,9 +17,9 @@ class Player2(Cycle):
 
         for i in range(constants.CYCLE_LENGTH):
             position = Point(x - i * constants.CELL_SIZE, y)
-            velocity = Point(1 * constants.CELL_SIZE, 0)
+            velocity = Point(.25 * constants.CELL_SIZE, 0)
             text = "8" if i == 0 else "#"
-            color = constants.BLUE if i == 0 else constants.GREEN
+            color = constants.BLUE
 
             segment = Actor()
             segment.set_position(position)
@@ -38,7 +38,5 @@ class Player2(Cycle):
         segment.set_position(position)
         segment.set_velocity(velocity)
         segment.set_text("#")
-        segment.set_color(constants.RED)
+        segment.set_color(constants.BLUE)
         self._segments.append(segment)
-
-

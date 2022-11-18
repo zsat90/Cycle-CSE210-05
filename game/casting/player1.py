@@ -10,8 +10,7 @@ class Player1(Cycle):
         super().__init__()
         self._segments = []
         self._prepare_body()
-    #polyhere
-    
+    # polyhere
 
     def _prepare_body(self):
         x = int(constants.MAX_X / .25)
@@ -19,9 +18,9 @@ class Player1(Cycle):
 
         for i in range(constants.CYCLE_LENGTH):
             position = Point(x - i * constants.CELL_SIZE, y)
-            velocity = Point(1 * constants.CELL_SIZE, 0)
-            text = "0" if i == 0 else "#"
-            color = constants.YELLOW if i == 0 else constants.RED
+            velocity = Point(.25 * constants.CELL_SIZE, 0)
+            text = "8" if i == 0 else "#"
+            color = constants.GREEN
 
             segment = Actor()
             segment.set_position(position)
@@ -42,6 +41,3 @@ class Player1(Cycle):
         segment.set_text("#")
         segment.set_color(constants.GREEN)
         self._segments.append(segment)
-   
-   
-
