@@ -12,7 +12,7 @@ class Player2(Cycle):
         self._prepare_body()
 
     def _prepare_body(self):
-        x = int(constants.MAX_X / .75)
+        x = int(600)
         y = int(constants.MAX_Y / 2)
 
         for i in range(constants.CYCLE_LENGTH):
